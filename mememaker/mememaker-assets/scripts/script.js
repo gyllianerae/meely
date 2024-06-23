@@ -3,24 +3,24 @@ const headList = document.getElementById('head-list');
 const eyesList = document.getElementById('eyes-list');
 const mouthList = document.getElementById('mouth-list');
 const bgList = document.getElementById('bg-list');
-const clothesList = document.getElementById('clothes-list');
-const necklaceList = document.getElementById('necklace-list');
+const bottomList = document.getElementById('bottom-list');
+const topList = document.getElementById('top-list');
 
 var current_body = undefined;
 var current_head = undefined;
 var current_eyes = undefined;
 var current_mouth = undefined;
 var current_bg = undefined;
-var current_clothes = undefined;
-var current_necklace = undefined;
+var current_bottom = undefined;
+var current_top = undefined;
 
 var selected_body = 0;
 var selected_head = 0;
 var selected_eyes = 0;
 var selected_mouth = 0;
 var selected_bg = 1;
-var selected_clothes = 0;
-var selected_necklace = 0;
+var selected_bottom = 0;
+var selected_top = 0;
 
 function setImage(type, image) {
     switch(type) {
@@ -39,11 +39,11 @@ function setImage(type, image) {
         case 'bg':
             current_bg = image;
             break;
-        case 'clothes':
-            current_clothes = image;
+        case 'bottom':
+            current_bottom = image;
             break;
-        case 'necklace':
-            current_necklace = image;
+        case 'top':
+            current_top = image;
             break;
     }
 }
@@ -71,10 +71,10 @@ function getSelectedIdx(type) {
             return selected_mouth;
         case 'bg':
             return selected_bg;
-        case 'clothes':
-            return selected_clothes;
-        case 'necklace':
-            return selected_necklace;
+        case 'bottom':
+            return selected_bottom;
+        case 'top':
+            return selected_top;
     }
 }
 
@@ -95,11 +95,11 @@ function setSelectedIdx(type,idx) {
         case 'bg':
             selected_bg = idx;
             break;
-        case 'clothes':
-            selected_clothes = idx;
+        case 'bottom':
+            selected_bottom = idx;
             break;
-        case 'necklace':
-            selected_necklace = idx;
+        case 'top':
+            selected_top = idx;
             break;
     }
 }
@@ -146,59 +146,64 @@ function selectParts(type, idx) {
 AddParts(bodyList, 'body',0, undefined, 'mememaker-assets/img/base.png', true);
 
 AddParts(headList, 'head',0, 'mememaker-assets/img/none.png', undefined, true);
-AddParts(headList, 'head',1, 'mememaker-assets/img/icons/head/1.png', 'mememaker-assets/img/head/1.png');
-AddParts(headList, 'head',2, 'mememaker-assets/img/icons/head/2.png', 'mememaker-assets/img/head/2.png');
-AddParts(headList, 'head',3, 'mememaker-assets/img/icons/head/3.png', 'mememaker-assets/img/head/3.png');
-AddParts(headList, 'head',4, 'mememaker-assets/img/icons/head/4.png', 'mememaker-assets/img/head/4.png');
-AddParts(headList, 'head',5, 'mememaker-assets/img/icons/head/5.png', 'mememaker-assets/img/head/5.png');
-AddParts(headList, 'head',6, 'mememaker-assets/img/icons/head/6.png', 'mememaker-assets/img/head/6.png');
-AddParts(headList, 'head',7, 'mememaker-assets/img/icons/head/7.png', 'mememaker-assets/img/head/7.png');
-AddParts(headList, 'head',8, 'mememaker-assets/img/icons/head/8.png', 'mememaker-assets/img/head/8.png');
-AddParts(headList, 'head',9, 'mememaker-assets/img/icons/head/9.png', 'mememaker-assets/img/head/9.png');
-AddParts(headList, 'head',10, 'mememaker-assets/img/icons/head/10.png', 'mememaker-assets/img/head/10.png');
-// AddParts(headList, 'head',11, 'mememaker-assets/img/icons/head/011.png', 'mememaker-assets/img/head/011.png');
-// AddParts(headList, 'head',12, 'mememaker-assets/img/icons/head/012.png', 'mememaker-assets/img/head/012.png');
+AddParts(headList, 'head',1, 'mememaker-assets/img/icons/head/001.png', 'mememaker-assets/img/head/001.png');
+AddParts(headList, 'head',2, 'mememaker-assets/img/icons/head/002.png', 'mememaker-assets/img/head/002.png');
+AddParts(headList, 'head',3, 'mememaker-assets/img/icons/head/003.png', 'mememaker-assets/img/head/003.png');
+AddParts(headList, 'head',4, 'mememaker-assets/img/icons/head/004.png', 'mememaker-assets/img/head/004.png');
+AddParts(headList, 'head',5, 'mememaker-assets/img/icons/head/005.png', 'mememaker-assets/img/head/005.png');
+AddParts(headList, 'head',6, 'mememaker-assets/img/icons/head/006.png', 'mememaker-assets/img/head/006.png');
+AddParts(headList, 'head',7, 'mememaker-assets/img/icons/head/007.png', 'mememaker-assets/img/head/007.png');
+AddParts(headList, 'head',8, 'mememaker-assets/img/icons/head/008.png', 'mememaker-assets/img/head/008.png');
+AddParts(headList, 'head',9, 'mememaker-assets/img/icons/head/009.png', 'mememaker-assets/img/head/009.png');
+AddParts(headList, 'head',10, 'mememaker-assets/img/icons/head/010.png', 'mememaker-assets/img/head/010.png');
+AddParts(headList, 'head',11, 'mememaker-assets/img/icons/head/011.png', 'mememaker-assets/img/head/011.png');
+AddParts(headList, 'head',12, 'mememaker-assets/img/icons/head/012.png', 'mememaker-assets/img/head/012.png');
 
 AddParts(eyesList, 'eyes',0, 'mememaker-assets/img/none.png', undefined, true);
-AddParts(eyesList, 'eyes',1, 'mememaker-assets/img/icons/eyes/1.png', 'mememaker-assets/img/eyes/1.png');
-AddParts(eyesList, 'eyes',2, 'mememaker-assets/img/icons/eyes/2.png', 'mememaker-assets/img/eyes/2.png');
-AddParts(eyesList, 'eyes',3, 'mememaker-assets/img/icons/eyes/3.png', 'mememaker-assets/img/eyes/3.png');
-AddParts(eyesList, 'eyes',4, 'mememaker-assets/img/icons/eyes/4.png', 'mememaker-assets/img/eyes/4.png');
-AddParts(eyesList, 'eyes',5, 'mememaker-assets/img/icons/eyes/5.png', 'mememaker-assets/img/eyes/5.png');
+AddParts(eyesList, 'eyes',1, 'mememaker-assets/img/icons/eyes/001.png', 'mememaker-assets/img/eyes/001.png');
+// AddParts(eyesList, 'eyes',2, 'mememaker-assets/img/icons/eyes/2.png', 'mememaker-assets/img/eyes/2.png');
+// AddParts(eyesList, 'eyes',3, 'mememaker-assets/img/icons/eyes/3.png', 'mememaker-assets/img/eyes/3.png');
+// AddParts(eyesList, 'eyes',4, 'mememaker-assets/img/icons/eyes/4.png', 'mememaker-assets/img/eyes/4.png');
+// AddParts(eyesList, 'eyes',5, 'mememaker-assets/img/icons/eyes/5.png', 'mememaker-assets/img/eyes/5.png');
 // AddParts(eyesList, 'eyes',6, 'mememaker-assets/img/icons/eyes/006.png', 'mememaker-assets/img/eyes/006.png');
 // AddParts(eyesList, 'eyes',7, 'mememaker-assets/img/icons/eyes/007.png', 'mememaker-assets/img/eyes/007.png');
 // AddParts(eyesList, 'eyes',8, 'mememaker-assets/img/icons/eyes/008.png', 'mememaker-assets/img/eyes/008.png');
 
-AddParts(mouthList, 'mouth',0, 'mememaker-assets/img/none.png', undefined, true);
-AddParts(mouthList, 'mouth',1, 'mememaker-assets/img/icons/mouth/1.png', 'mememaker-assets/img/mouth/1.png');
-AddParts(mouthList, 'mouth',2, 'mememaker-assets/img/icons/mouth/2.png', 'mememaker-assets/img/mouth/2.png');
-AddParts(mouthList, 'mouth',3, 'mememaker-assets/img/icons/mouth/3.png', 'mememaker-assets/img/mouth/3.png');
-AddParts(mouthList, 'mouth',4, 'mememaker-assets/img/icons/mouth/4.png', 'mememaker-assets/img/mouth/4.png');
-AddParts(mouthList, 'mouth',5, 'mememaker-assets/img/icons/mouth/5.png', 'mememaker-assets/img/mouth/5.png');
-AddParts(mouthList, 'mouth',6, 'mememaker-assets/img/icons/mouth/6.png', 'mememaker-assets/img/mouth/6.png');
-AddParts(mouthList, 'mouth',7, 'mememaker-assets/img/icons/mouth/7.png', 'mememaker-assets/img/mouth/7.png');
+// AddParts(mouthList, 'mouth',0, 'mememaker-assets/img/none.png', undefined, true);
+// AddParts(mouthList, 'mouth',1, 'mememaker-assets/img/icons/mouth/1.png', 'mememaker-assets/img/mouth/1.png');
+// AddParts(mouthList, 'mouth',2, 'mememaker-assets/img/icons/mouth/2.png', 'mememaker-assets/img/mouth/2.png');
+// AddParts(mouthList, 'mouth',3, 'mememaker-assets/img/icons/mouth/3.png', 'mememaker-assets/img/mouth/3.png');
+// AddParts(mouthList, 'mouth',4, 'mememaker-assets/img/icons/mouth/4.png', 'mememaker-assets/img/mouth/4.png');
+// AddParts(mouthList, 'mouth',5, 'mememaker-assets/img/icons/mouth/5.png', 'mememaker-assets/img/mouth/5.png');
+// AddParts(mouthList, 'mouth',6, 'mememaker-assets/img/icons/mouth/6.png', 'mememaker-assets/img/mouth/6.png');
+// AddParts(mouthList, 'mouth',7, 'mememaker-assets/img/icons/mouth/7.png', 'mememaker-assets/img/mouth/7.png');
 
-AddParts(necklaceList, 'necklace',0, 'mememaker-assets/img/none.png', undefined, true);
-AddParts(necklaceList, 'necklace',1, 'mememaker-assets/img/icons/necklace/1.png', 'mememaker-assets/img/necklace/1.png');
-AddParts(necklaceList, 'necklace',2, 'mememaker-assets/img/icons/necklace/2.png', 'mememaker-assets/img/necklace/2.png');
-AddParts(necklaceList, 'necklace',3, 'mememaker-assets/img/icons/necklace/3.png', 'mememaker-assets/img/necklace/3.png');
-AddParts(necklaceList, 'necklace',4, 'mememaker-assets/img/icons/necklace/4.png', 'mememaker-assets/img/necklace/4.png');
-AddParts(necklaceList, 'necklace',5, 'mememaker-assets/img/icons/necklace/5.png', 'mememaker-assets/img/necklace/5.png');
-AddParts(necklaceList, 'necklace',6, 'mememaker-assets/img/icons/necklace/6.png', 'mememaker-assets/img/necklace/6.png');
-AddParts(necklaceList, 'necklace',7, 'mememaker-assets/img/icons/necklace/7.png', 'mememaker-assets/img/necklace/7.png');
+AddParts(topList, 'top',0, 'mememaker-assets/img/none.png', undefined, true);
+AddParts(topList, 'top',1, 'mememaker-assets/img/icons/top/001.png', 'mememaker-assets/img/top/001.png');
+AddParts(topList, 'top',2, 'mememaker-assets/img/icons/top/002.png', 'mememaker-assets/img/top/002.png');
+AddParts(topList, 'top',3, 'mememaker-assets/img/icons/top/003.png', 'mememaker-assets/img/top/003.png');
+AddParts(topList, 'top',4, 'mememaker-assets/img/icons/top/004.png', 'mememaker-assets/img/top/004.png');
+AddParts(topList, 'top',5, 'mememaker-assets/img/icons/top/005.png', 'mememaker-assets/img/top/005.png');
+AddParts(topList, 'top',6, 'mememaker-assets/img/icons/top/006.png', 'mememaker-assets/img/top/006.png');
+AddParts(topList, 'top',7, 'mememaker-assets/img/icons/top/007.png', 'mememaker-assets/img/top/007.png');
+AddParts(topList, 'top',8, 'mememaker-assets/img/icons/top/008.png', 'mememaker-assets/img/top/008.png');
+AddParts(topList, 'top',9, 'mememaker-assets/img/icons/top/009.png', 'mememaker-assets/img/top/009.png');
+AddParts(topList, 'top',10, 'mememaker-assets/img/icons/top/010.png', 'mememaker-assets/img/top/010.png');
+AddParts(topList, 'top',11, 'mememaker-assets/img/icons/top/011.png', 'mememaker-assets/img/top/011.png');
+AddParts(topList, 'top',12, 'mememaker-assets/img/icons/top/012.png', 'mememaker-assets/img/top/012.png');
 
-AddParts(clothesList, 'clothes', 0, 'mememaker-assets/img/none.png', undefined, true);
-AddParts(clothesList, 'clothes', 1, 'mememaker-assets/img/icons/clothes/1.png', 'mememaker-assets/img/clothes/1.png');
-AddParts(clothesList, 'clothes', 2, 'mememaker-assets/img/icons/clothes/2.png', 'mememaker-assets/img/clothes/2.png');
-AddParts(clothesList, 'clothes', 3, 'mememaker-assets/img/icons/clothes/3.png', 'mememaker-assets/img/clothes/3.png');
-AddParts(clothesList, 'clothes', 4, 'mememaker-assets/img/icons/clothes/4.png', 'mememaker-assets/img/clothes/4.png');
-AddParts(clothesList, 'clothes', 5, 'mememaker-assets/img/icons/clothes/5.png', 'mememaker-assets/img/clothes/5.png');
-AddParts(clothesList, 'clothes', 6, 'mememaker-assets/img/icons/clothes/6.png', 'mememaker-assets/img/clothes/6.png');
-AddParts(clothesList, 'clothes', 7, 'mememaker-assets/img/icons/clothes/7.png', 'mememaker-assets/img/clothes/7.png');
-AddParts(clothesList, 'clothes', 8, 'mememaker-assets/img/icons/clothes/8.png', 'mememaker-assets/img/clothes/8.png');
-AddParts(clothesList, 'clothes', 9, 'mememaker-assets/img/icons/clothes/9.png', 'mememaker-assets/img/clothes/9.png');
-AddParts(clothesList, 'clothes', 10, 'mememaker-assets/img/icons/clothes/10.png', 'mememaker-assets/img/clothes/10.png');
-AddParts(clothesList, 'clothes', 11, 'mememaker-assets/img/icons/clothes/11.png', 'mememaker-assets/img/clothes/11.png');
+AddParts(bottomList, 'bottom', 0, 'mememaker-assets/img/none.png', undefined, true);
+AddParts(bottomList, 'bottom', 1, 'mememaker-assets/img/icons/bottom/001.png', 'mememaker-assets/img/bottom/001.png');
+AddParts(bottomList, 'bottom', 2, 'mememaker-assets/img/icons/bottom/002.png', 'mememaker-assets/img/bottom/002.png');
+AddParts(bottomList, 'bottom', 3, 'mememaker-assets/img/icons/bottom/003.png', 'mememaker-assets/img/bottom/003.png');
+AddParts(bottomList, 'bottom', 4, 'mememaker-assets/img/icons/bottom/004.png', 'mememaker-assets/img/bottom/004.png');
+AddParts(bottomList, 'bottom', 5, 'mememaker-assets/img/icons/bottom/005.png', 'mememaker-assets/img/bottom/005.png');
+AddParts(bottomList, 'bottom', 6, 'mememaker-assets/img/icons/bottom/006.png', 'mememaker-assets/img/bottom/006.png');
+AddParts(bottomList, 'bottom', 7, 'mememaker-assets/img/icons/bottom/007.png', 'mememaker-assets/img/bottom/007.png');
+AddParts(bottomList, 'bottom', 8, 'mememaker-assets/img/icons/bottom/008.png', 'mememaker-assets/img/bottom/008.png');
+AddParts(bottomList, 'bottom', 9, 'mememaker-assets/img/icons/bottom/009.png', 'mememaker-assets/img/bottom/009.png');
+AddParts(bottomList, 'bottom', 10, 'mememaker-assets/img/icons/bottom/010.png', 'mememaker-assets/img/bottom/010.png');
+// AddParts(bottomList, 'bottom', 11, 'mememaker-assets/img/icons/bottom/11.png', 'mememaker-assets/img/bottom/11.png');
 
 AddParts(bgList, 'bg', 1, 'mememaker-assets/img/icons/background/1.png', 'mememaker-assets/img/background/1.png', true);
 AddParts(bgList, 'bg', 2, 'mememaker-assets/img/icons/background/2.png', 'mememaker-assets/img/background/2.png');
@@ -234,20 +239,20 @@ setInterval(() => {
         context.drawImage(current_head, 0, 0, 400, 400 );
     }
 
-    if(current_mouth != undefined) {
-        context.drawImage(current_mouth, 0, 0, 400, 400 );
-    }
+    // if(current_mouth != undefined) {
+    //     context.drawImage(current_mouth, 0, 0, 400, 400 );
+    // }
 
     if(current_eyes != undefined) {
         context.drawImage(current_eyes, 0, 0, 400, 400 );
     }
     
-    if(current_clothes != undefined) {
-        context.drawImage(current_clothes, 0, 0, 400, 400 );
+    if(current_bottom != undefined) {
+        context.drawImage(current_bottom, 0, 0, 400, 400 );
     }
 
-    if(current_necklace != undefined) {
-        context.drawImage(current_necklace, 0, 0, 400, 400 );
+    if(current_top != undefined) {
+        context.drawImage(current_top, 0, 0, 400, 400 );
     }
 }, 100);
 
@@ -259,28 +264,28 @@ const resetBtn = document.getElementById('reset-btn');
 resetBtn.onclick = () => {
     selectParts('head', 0);
     selectParts('eyes', 0);
-    selectParts('mouth', 0);
+    // selectParts('mouth', 0);
     selectParts('bg', 1);
-    selectParts('clothes', 0);
-    selectParts('necklace', 0);
+    selectParts('bottom', 0);
+    selectParts('top', 0);
 }
 
 const randomBtn = document.getElementById('random-btn');
 
 randomBtn.onclick = () => {
-    const randHead = randRange(0, 10);
-    const randEyes = randRange(0, 5);
-    const randMouth = randRange(0, 7);
+    const randHead = randRange(0, 12);
+    const randEyes = randRange(0, 1);
+    // const randMouth = randRange(0, 7);
     const randBg = randRange(1, 10);
-    const randClothes = randRange(0, 11);
-    const randNecklace = randRange(0, 7);
+    const randbottom = randRange(0, 10);
+    const randtop = randRange(0, 12);
 
     selectParts('head', randHead);
     selectParts('eyes', randEyes);
-    selectParts('mouth', randMouth);
+    // selectParts('mouth', randMouth);
     selectParts('bg', randBg);
-    selectParts('clothes', randClothes);
-    selectParts('necklace', randNecklace);
+    selectParts('bottom', randbottom);
+    selectParts('top', randtop);
 }
 
 const downloadBtn = document.getElementById('download-btn');
@@ -308,12 +313,12 @@ downloadBtn.onclick = () => {
 //         medium: -280,
 //         large: -290
 //     },
-//     clothes: {
+//     bottom: {
 //         small: -850,
 //         medium: -800,
 //         large: -670
 //     },
-//     necklace: {
+//     top: {
 //         small: -580,
 //         medium: -560,
 //         large: -300
@@ -349,10 +354,10 @@ downloadBtn.onclick = () => {
 //     eyesRightmaxTranslateX = calculateMaxTranslateX('eyes');
 //     // Update maxTranslateX values for mouth list
 //     mouthRightmaxTranslateX = calculateMaxTranslateX('mouth');
-//     // Update maxTranslateX values for clothes list
-//     clothesRightmaxTranslateX = calculateMaxTranslateX('clothes');
-//     // Update maxTranslateX values for necklace list
-//     necklaceRightmaxTranslateX = calculateMaxTranslateX('necklace');
+//     // Update maxTranslateX values for bottom list
+//     bottomRightmaxTranslateX = calculateMaxTranslateX('bottom');
+//     // Update maxTranslateX values for top list
+//     topRightmaxTranslateX = calculateMaxTranslateX('top');
 //     // Update maxTranslateX values for bg list
 //     bgRightmaxTranslateX = calculateMaxTranslateX('bg');
 // }
@@ -447,60 +452,60 @@ downloadBtn.onclick = () => {
 //     mouthList.style.transform = `translateX(${mouthRightcurrentTranslateX}px)`;
 // }
 
-//clothes left and right buttons
+//bottom left and right buttons
 
-// const clothesLeftBtn = document.getElementById('clothes-left');
-// const clothesLeftmaxTranslateX = 0; 
-// const clothesLefttranslateStep = -200;
+// const bottomLeftBtn = document.getElementById('bottom-left');
+// const bottomLeftmaxTranslateX = 0; 
+// const bottomLefttranslateStep = -200;
 
-// clothesLeftBtn.onclick = () => {
-//     let clothesLeftcurrentTranslateX = parseInt(clothesList.style.transform.replace('translateX(', '').replace('px)', '')) || 0;
-//     clothesLeftcurrentTranslateX -= clothesLefttranslateStep;
-//     if (clothesLeftcurrentTranslateX > clothesLeftmaxTranslateX) {
-//         clothesLeftcurrentTranslateX = clothesLeftmaxTranslateX;
+// bottomLeftBtn.onclick = () => {
+//     let bottomLeftcurrentTranslateX = parseInt(bottomList.style.transform.replace('translateX(', '').replace('px)', '')) || 0;
+//     bottomLeftcurrentTranslateX -= bottomLefttranslateStep;
+//     if (bottomLeftcurrentTranslateX > bottomLeftmaxTranslateX) {
+//         bottomLeftcurrentTranslateX = bottomLeftmaxTranslateX;
 //     }
-//     clothesList.style.transform = `translateX(${clothesLeftcurrentTranslateX}px)`;
+//     bottomList.style.transform = `translateX(${bottomLeftcurrentTranslateX}px)`;
 // }
 
-// const clothesRightBtn = document.getElementById('clothes-right');
+// const bottomRightBtn = document.getElementById('bottom-right');
 
-// const clothesRighttranslateStep = 200; 
+// const bottomRighttranslateStep = 200; 
 
-// clothesRightBtn.onclick = () => {
-//     let clothesRightcurrentTranslateX = parseInt(clothesList.style.transform.replace('translateX(', '').replace('px)', '')) || 0;
-//     clothesRightcurrentTranslateX -= clothesRighttranslateStep;
-//     if (clothesRightcurrentTranslateX < clothesRightmaxTranslateX) {
-//         clothesRightcurrentTranslateX = clothesRightmaxTranslateX;
+// bottomRightBtn.onclick = () => {
+//     let bottomRightcurrentTranslateX = parseInt(bottomList.style.transform.replace('translateX(', '').replace('px)', '')) || 0;
+//     bottomRightcurrentTranslateX -= bottomRighttranslateStep;
+//     if (bottomRightcurrentTranslateX < bottomRightmaxTranslateX) {
+//         bottomRightcurrentTranslateX = bottomRightmaxTranslateX;
 //     }
-//     clothesList.style.transform = `translateX(${clothesRightcurrentTranslateX}px)`
+//     bottomList.style.transform = `translateX(${bottomRightcurrentTranslateX}px)`
 // }
 
-//necklace left and right buttons
+//top left and right buttons
 
-// const necklaceLeftBtn = document.getElementById('necklace-left');
-// const necklaceLeftmaxTranslateX = 0;
-// const necklaceLefttranslateStep = -200; 
+// const topLeftBtn = document.getElementById('top-left');
+// const topLeftmaxTranslateX = 0;
+// const topLefttranslateStep = -200; 
 
-// necklaceLeftBtn.onclick = () => {
-//     let necklaceLeftcurrentTranslateX = parseInt(necklaceList.style.transform.replace('translateX(', '').replace('px)', '')) || 0;
-//     necklaceLeftcurrentTranslateX -= necklaceLefttranslateStep;
-//     if (necklaceLeftcurrentTranslateX > necklaceLeftmaxTranslateX) {
-//         necklaceLeftcurrentTranslateX = necklaceLeftmaxTranslateX;
+// topLeftBtn.onclick = () => {
+//     let topLeftcurrentTranslateX = parseInt(topList.style.transform.replace('translateX(', '').replace('px)', '')) || 0;
+//     topLeftcurrentTranslateX -= topLefttranslateStep;
+//     if (topLeftcurrentTranslateX > topLeftmaxTranslateX) {
+//         topLeftcurrentTranslateX = topLeftmaxTranslateX;
 //     }
-//     necklaceList.style.transform = `translateX(${necklaceLeftcurrentTranslateX}px)`;
+//     topList.style.transform = `translateX(${topLeftcurrentTranslateX}px)`;
 // }
 
-// const necklaceRightBtn = document.getElementById('necklace-right');
+// const topRightBtn = document.getElementById('top-right');
 
-// const necklaceRighttranslateStep = 200; 
+// const topRighttranslateStep = 200; 
 
-// necklaceRightBtn.onclick = () => {
-//     let necklaceRightcurrentTranslateX = parseInt(necklaceList.style.transform.replace('translateX(', '').replace('px)', '')) || 0;
-//     necklaceRightcurrentTranslateX -= necklaceRighttranslateStep;
-//     if (necklaceRightcurrentTranslateX < necklaceRightmaxTranslateX) {
-//         necklaceRightcurrentTranslateX = necklaceRightmaxTranslateX;
+// topRightBtn.onclick = () => {
+//     let topRightcurrentTranslateX = parseInt(topList.style.transform.replace('translateX(', '').replace('px)', '')) || 0;
+//     topRightcurrentTranslateX -= topRighttranslateStep;
+//     if (topRightcurrentTranslateX < topRightmaxTranslateX) {
+//         topRightcurrentTranslateX = topRightmaxTranslateX;
 //     }
-//     necklaceList.style.transform = `translateX(${necklaceRightcurrentTranslateX}px)`;
+//     topList.style.transform = `translateX(${topRightcurrentTranslateX}px)`;
 // }
 
 //bg left and right buttons
