@@ -131,7 +131,6 @@ a {
 a,
 img,
 svg,
-span,
 input,
 button,
 strong,
@@ -265,6 +264,10 @@ body {
   background-color: var(--yellow);
   padding: 1rem;
   margin-bottom: 1rem;
+}
+
+#ca-text:hover {
+  cursor: pointer;
 }
 
 .header > .container {
