@@ -94,10 +94,16 @@ h1 {
     align-items: flex-start; 
 }
 
-.left-view, .right-view {
+.right-view {
+    background-color: var(--bg);
+    padding: 5%;
+}
+
+.left-view {
     background-color: white;
     padding: 5%;
 }
+
 
 .left-view, .right-view {
     display: flex;
@@ -186,10 +192,12 @@ h1 {
 .categories {
     border: 1px solid var(--dark-blue);
     border-radius: 40%;
+    background-color: var(--bg);
 }
 
 .categories.active {
-    background-color: var(--dark-blue);
+    background-color: var(--yellow);
+    box-shadow: 0px 0px 5px 5px var(--yellow);
 }
 
 .category-buttons {
@@ -245,7 +253,7 @@ h1 {
 }
 
 .parts {
-    border: 3px solid rgb(254, 255, 254);
+    border: 3px solid var(--yellow);
     border-radius: 10px;
     justify-content: center;
     align-items: center;
@@ -264,9 +272,9 @@ h1 {
 }
 
 .parts-selected {
-    border: 3px solid rgb(86, 69, 146);
-    background-color: hsl(64, 87%, 73%);
-    box-shadow: 0px 0px 5px 5px rgb(86, 69, 146);
+    border: 3px solid var(--dark-blue);
+    background-color: var(--bg);
+    box-shadow: 0px 0px 5px 5px var(--dark-blue);
 }
 
 .sns {
