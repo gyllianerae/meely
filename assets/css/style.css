@@ -274,11 +274,24 @@ body {
   gap: 20px;
 }
 
+@keyframes scale {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
 .logo {
   color: var(--bg);
   font-size: 3.5rem;
   font-weight: var(--fw-700);
   line-height: 1;
+  animation: scale 3s ease-in-out infinite; 
 }
 
 .nav-toggle-btn { 
@@ -337,12 +350,50 @@ body {
   /* background-color: var(--cultured-1); */
 }
 
+@keyframes bounce-infinite {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0); /* Start and end with no translation */
+  }
+  40% {
+    transform: translateY(-20px); /* Bounce up */
+  }
+  60% {
+    transform: translateY(-10px); /* Bounce down */
+  }
+}
+
 .hero-banner {
   background-color: var(--light-gray);
   aspect-ratio: 1 / 0.8;
+  animation: bounce-infinite 2s ease-in-out infinite; 
 }
 
-.hero-title { margin-block: 30px 15px; }
+@keyframes color-cycle {
+  0% { color: #ff6347; } /* Tomato */
+  25% { color: #1e90ff; } /* Dodger Blue */
+  50% { color: #7cfc00; } /* Lawn Green */
+  75% { color: #ff69b4; } /* Hot Pink */
+  100% { color: #ff6347; } /* Tomato */
+}
+
+@keyframes zoom-infinite {
+  0% {
+    transform: scale(1); /* Start size */
+  }
+  50% {
+    transform: scale(1.2); /* Zoom in */
+  }
+  100% {
+    transform: scale(1); /* Return to original size */
+  }
+}
+
+.hero-title {
+  margin-block: 30px 15px;
+  animation: color-cycle 5s infinite, zoom-infinite 3s infinite;
+  font-size: 13rem;
+}
+
 
 .hero-form { margin-block: 20px 30px; }
 
@@ -474,13 +525,30 @@ body {
 
 .about .section-text:first-of-type { margin-block: 5px 30px; }
 
+.about .section-title {
+  margin-bottom: 3rem;
+}
+
 .about-list {
   display: grid;
   gap: 25px;
 }
 
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
 .about-list img {
   width: 100%;
+  animation: pulse 3s ease-in-out infinite;
 }
 
 .about-card {
