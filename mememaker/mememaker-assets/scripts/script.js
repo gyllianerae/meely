@@ -292,244 +292,254 @@ downloadBtn.onclick = () => {
 }
 
 // Define object to store maxTranslateX values for each type
-const maxTranslateXValues = {
-    head: {
-        small: -970,
-        medium: -730,
-        large: -580
-    },
-    eyes: {
-        small: -520,
-        medium: -280,
-        large: -110
-    },
-    mouth: {
-        small: -520,
-        medium: -280,
-        large: -290
-    },
-    clothes: {
-        small: -850,
-        medium: -800,
-        large: -670
-    },
-    necklace: {
-        small: -580,
-        medium: -560,
-        large: -300
-    },
-    bg: {
-        small: -700,
-        medium: -700,
-        large: -470
-    }
-};
+// const maxTranslateXValues = {
+//     head: {
+//         small: -970,
+//         medium: -730,
+//         large: -580
+//     },
+//     eyes: {
+//         small: -520,
+//         medium: -280,
+//         large: -110
+//     },
+//     mouth: {
+//         small: -520,
+//         medium: -280,
+//         large: -290
+//     },
+//     clothes: {
+//         small: -850,
+//         medium: -800,
+//         large: -670
+//     },
+//     necklace: {
+//         small: -580,
+//         medium: -560,
+//         large: -300
+//     },
+//     bg: {
+//         small: -700,
+//         medium: -700,
+//         large: -470
+//     }
+// };
 
 // Function to calculate maxTranslateX value based on the device width and media query conditions
-function calculateMaxTranslateX(type) {
-    const screenWidth = window.innerWidth;
-    let maxTranslateX;
+// function calculateMaxTranslateX(type) {
+//     const screenWidth = window.innerWidth;
+//     let maxTranslateX;
 
-    if (screenWidth <= 600) {
-        maxTranslateX = maxTranslateXValues[type].small;
-    } else if (screenWidth <= 828) {
-        maxTranslateX = maxTranslateXValues[type].medium;
-    } else {
-        maxTranslateX = maxTranslateXValues[type].large;
-    }
+//     if (screenWidth <= 600) {
+//         maxTranslateX = maxTranslateXValues[type].small;
+//     } else if (screenWidth <= 828) {
+//         maxTranslateX = maxTranslateXValues[type].medium;
+//     } else {
+//         maxTranslateX = maxTranslateXValues[type].large;
+//     }
 
-    return maxTranslateX;
-}
+//     return maxTranslateX;
+// }
 
 // Function to update maxTranslateX values for right buttons based on screen size
-function updateMaxTranslateX() {
-    // Update maxTranslateX values for head list
-    headRightmaxTranslateX = calculateMaxTranslateX('head');
-    // Update maxTranslateX values for eyes list
-    eyesRightmaxTranslateX = calculateMaxTranslateX('eyes');
-    // Update maxTranslateX values for mouth list
-    mouthRightmaxTranslateX = calculateMaxTranslateX('mouth');
-    // Update maxTranslateX values for clothes list
-    clothesRightmaxTranslateX = calculateMaxTranslateX('clothes');
-    // Update maxTranslateX values for necklace list
-    necklaceRightmaxTranslateX = calculateMaxTranslateX('necklace');
-    // Update maxTranslateX values for bg list
-    bgRightmaxTranslateX = calculateMaxTranslateX('bg');
-}
+// function updateMaxTranslateX() {
+//     // Update maxTranslateX values for head list
+//     headRightmaxTranslateX = calculateMaxTranslateX('head');
+//     // Update maxTranslateX values for eyes list
+//     eyesRightmaxTranslateX = calculateMaxTranslateX('eyes');
+//     // Update maxTranslateX values for mouth list
+//     mouthRightmaxTranslateX = calculateMaxTranslateX('mouth');
+//     // Update maxTranslateX values for clothes list
+//     clothesRightmaxTranslateX = calculateMaxTranslateX('clothes');
+//     // Update maxTranslateX values for necklace list
+//     necklaceRightmaxTranslateX = calculateMaxTranslateX('necklace');
+//     // Update maxTranslateX values for bg list
+//     bgRightmaxTranslateX = calculateMaxTranslateX('bg');
+// }
 
 // Call updateMaxTranslateX function on page load
-updateMaxTranslateX();
+// updateMaxTranslateX();
 
 // Call updateMaxTranslateX function when the window resizes
-window.addEventListener('resize', updateMaxTranslateX);
+// window.addEventListener('resize', updateMaxTranslateX);
 
 
 //head left and right buttons
-const headLeftBtn = document.getElementById('head-left');
-const headLeftmaxTranslateX = 0; // Adjust the maximum translation as needed
-const headLefttranslateStep = -200; // Adjust the step size as needed
+// const headLeftBtn = document.getElementById('head-left');
+// const headLeftmaxTranslateX = 0
+// const headLefttranslateStep = -200
 
-headLeftBtn.onclick = () => {
-    let headLeftcurrentTranslateX = parseInt(headList.style.transform.replace('translateX(', '').replace('px)', '')) || 0;
-    headLeftcurrentTranslateX -= headLefttranslateStep;
-    if (headLeftcurrentTranslateX > headLeftmaxTranslateX) {
-        headLeftcurrentTranslateX = headLeftmaxTranslateX;
-    }
-    headList.style.transform = `translateX(${headLeftcurrentTranslateX}px)`;
-}
+// headLeftBtn.onclick = () => {
+//     let headLeftcurrentTranslateX = parseInt(headList.style.transform.replace('translateX(', '').replace('px)', '')) || 0;
+//     headLeftcurrentTranslateX -= headLefttranslateStep;
+//     if (headLeftcurrentTranslateX > headLeftmaxTranslateX) {
+//         headLeftcurrentTranslateX = headLeftmaxTranslateX;
+//     }
+//     headList.style.transform = `translateX(${headLeftcurrentTranslateX}px)`;
+// }
 
-const headRightBtn = document.getElementById('head-right');
+// const headRightBtn = document.getElementById('head-right');
 // const headRightmaxTranslateX = -670; 
-const headRighttranslateStep = 200; // Adjust the step size as needed
+// const headRighttranslateStep = 200; 
 
-headRightBtn.onclick = () => {
-    let headRightcurrentTranslateX = parseInt(headList.style.transform.replace('translateX(', '').replace('px)', '')) || 0;
-    headRightcurrentTranslateX -= headRighttranslateStep;
-    if (headRightcurrentTranslateX < headRightmaxTranslateX) {
-        headRightcurrentTranslateX = headRightmaxTranslateX;
-    }
-    headList.style.transform = `translateX(${headRightcurrentTranslateX}px)`;
-}
+// headRightBtn.onclick = () => {
+//     let headRightcurrentTranslateX = parseInt(headList.style.transform.replace('translateX(', '').replace('px)', '')) || 0;
+//     headRightcurrentTranslateX -= headRighttranslateStep;
+//     if (headRightcurrentTranslateX < headRightmaxTranslateX) {
+//         headRightcurrentTranslateX = headRightmaxTranslateX;
+//     }
+//     headList.style.transform = `translateX(${headRightcurrentTranslateX}px)`;
+// }
 
 //head left and right buttons
-const eyesLeftBtn = document.getElementById('eyes-left');
-const eyesLeftmaxTranslateX = 0; // Adjust the maximum translation as needed
-const eyesLefttranslateStep = -200; // Adjust the step size as needed
+// const eyesLeftBtn = document.getElementById('eyes-left');
+// const eyesLeftmaxTranslateX = 0;
+// const eyesLefttranslateStep = -200;
 
-eyesLeftBtn.onclick = () => {
-    let eyesLeftcurrentTranslateX = parseInt(eyesList.style.transform.replace('translateX(', '').replace('px)', '')) || 0;
-    eyesLeftcurrentTranslateX -= eyesLefttranslateStep;
-    if (eyesLeftcurrentTranslateX > eyesLeftmaxTranslateX) {
-        eyesLeftcurrentTranslateX = eyesLeftmaxTranslateX;
-    }
-    eyesList.style.transform = `translateX(${eyesLeftcurrentTranslateX}px)`;
-}
+// eyesLeftBtn.onclick = () => {
+//     let eyesLeftcurrentTranslateX = parseInt(eyesList.style.transform.replace('translateX(', '').replace('px)', '')) || 0;
+//     eyesLeftcurrentTranslateX -= eyesLefttranslateStep;
+//     if (eyesLeftcurrentTranslateX > eyesLeftmaxTranslateX) {
+//         eyesLeftcurrentTranslateX = eyesLeftmaxTranslateX;
+//     }
+//     eyesList.style.transform = `translateX(${eyesLeftcurrentTranslateX}px)`;
+// }
 
-const eyesRightBtn = document.getElementById('eyes-right');
+// const eyesRightBtn = document.getElementById('eyes-right');
 // const eyesRightmaxTranslateX = -220;
-const eyesRighttranslateStep = 200; // Adjust the step size as needed
+// const eyesRighttranslateStep = 200;
 
-eyesRightBtn.onclick = () => {
-    let eyesRightcurrentTranslateX = parseInt(eyesList.style.transform.replace('translateX(', '').replace('px)', '')) || 0;
-    eyesRightcurrentTranslateX -= eyesRighttranslateStep;
-    if (eyesRightcurrentTranslateX < eyesRightmaxTranslateX) {
-        eyesRightcurrentTranslateX = eyesRightmaxTranslateX;
-    }
-    eyesList.style.transform = `translateX(${eyesRightcurrentTranslateX}px)`;
-}
+// eyesRightBtn.onclick = () => {
+//     let eyesRightcurrentTranslateX = parseInt(eyesList.style.transform.replace('translateX(', '').replace('px)', '')) || 0;
+//     eyesRightcurrentTranslateX -= eyesRighttranslateStep;
+//     if (eyesRightcurrentTranslateX < eyesRightmaxTranslateX) {
+//         eyesRightcurrentTranslateX = eyesRightmaxTranslateX;
+//     }
+//     eyesList.style.transform = `translateX(${eyesRightcurrentTranslateX}px)`;
+// }
 
 
 //mouth left and right buttons
 
-const mouthLeftBtn = document.getElementById('mouth-left');
-const mouthLeftmaxTranslateX = 0; // Adjust the maximum translation as needed
-const mouthLefttranslateStep = -200; // Adjust the step size as needed
+// const mouthLeftBtn = document.getElementById('mouth-left');
+// const mouthLeftmaxTranslateX = 0;
+// const mouthLefttranslateStep = -200;
 
-mouthLeftBtn.onclick = () => {
-    let mouthLeftcurrentTranslateX = parseInt(mouthList.style.transform.replace('translateX(', '').replace('px)', '')) || 0;
-    mouthLeftcurrentTranslateX -= mouthLefttranslateStep;
-    if (mouthLeftcurrentTranslateX > mouthLeftmaxTranslateX) {
-        mouthLeftcurrentTranslateX = mouthLeftmaxTranslateX;
-    }
-    mouthList.style.transform = `translateX(${mouthLeftcurrentTranslateX}px)`;
-}
+// mouthLeftBtn.onclick = () => {
+//     let mouthLeftcurrentTranslateX = parseInt(mouthList.style.transform.replace('translateX(', '').replace('px)', '')) || 0;
+//     mouthLeftcurrentTranslateX -= mouthLefttranslateStep;
+//     if (mouthLeftcurrentTranslateX > mouthLeftmaxTranslateX) {
+//         mouthLeftcurrentTranslateX = mouthLeftmaxTranslateX;
+//     }
+//     mouthList.style.transform = `translateX(${mouthLeftcurrentTranslateX}px)`;
+// }
 
-const mouthRightBtn = document.getElementById('mouth-right');
+// const mouthRightBtn = document.getElementById('mouth-right');
 // const mouthRightmaxTranslateX = -220;
-const mouthRighttranslateStep = 200; // Adjust the step size as needed
+// const mouthRighttranslateStep = 200;
 
-mouthRightBtn.onclick = () => {
-    let mouthRightcurrentTranslateX = parseInt(mouthList.style.transform.replace('translateX(', '').replace('px)', '')) || 0;
-    mouthRightcurrentTranslateX -= mouthRighttranslateStep;
-    if (mouthRightcurrentTranslateX < mouthRightmaxTranslateX) {
-        mouthRightcurrentTranslateX = mouthRightmaxTranslateX;
-    }
-    mouthList.style.transform = `translateX(${mouthRightcurrentTranslateX}px)`;
-}
+// mouthRightBtn.onclick = () => {
+//     let mouthRightcurrentTranslateX = parseInt(mouthList.style.transform.replace('translateX(', '').replace('px)', '')) || 0;
+//     mouthRightcurrentTranslateX -= mouthRighttranslateStep;
+//     if (mouthRightcurrentTranslateX < mouthRightmaxTranslateX) {
+//         mouthRightcurrentTranslateX = mouthRightmaxTranslateX;
+//     }
+//     mouthList.style.transform = `translateX(${mouthRightcurrentTranslateX}px)`;
+// }
 
 //clothes left and right buttons
 
-const clothesLeftBtn = document.getElementById('clothes-left');
-const clothesLeftmaxTranslateX = 0; // Adjust the maximum translation as needed
-const clothesLefttranslateStep = -200; // Adjust the step size as needed
+// const clothesLeftBtn = document.getElementById('clothes-left');
+// const clothesLeftmaxTranslateX = 0; 
+// const clothesLefttranslateStep = -200;
 
-clothesLeftBtn.onclick = () => {
-    let clothesLeftcurrentTranslateX = parseInt(clothesList.style.transform.replace('translateX(', '').replace('px)', '')) || 0;
-    clothesLeftcurrentTranslateX -= clothesLefttranslateStep;
-    if (clothesLeftcurrentTranslateX > clothesLeftmaxTranslateX) {
-        clothesLeftcurrentTranslateX = clothesLeftmaxTranslateX;
-    }
-    clothesList.style.transform = `translateX(${clothesLeftcurrentTranslateX}px)`;
-}
+// clothesLeftBtn.onclick = () => {
+//     let clothesLeftcurrentTranslateX = parseInt(clothesList.style.transform.replace('translateX(', '').replace('px)', '')) || 0;
+//     clothesLeftcurrentTranslateX -= clothesLefttranslateStep;
+//     if (clothesLeftcurrentTranslateX > clothesLeftmaxTranslateX) {
+//         clothesLeftcurrentTranslateX = clothesLeftmaxTranslateX;
+//     }
+//     clothesList.style.transform = `translateX(${clothesLeftcurrentTranslateX}px)`;
+// }
 
-const clothesRightBtn = document.getElementById('clothes-right');
-// const clothesRightmaxTranslateX = -1210;
-const clothesRighttranslateStep = 200; // Adjust the step size as needed
+// const clothesRightBtn = document.getElementById('clothes-right');
 
-clothesRightBtn.onclick = () => {
-    let clothesRightcurrentTranslateX = parseInt(clothesList.style.transform.replace('translateX(', '').replace('px)', '')) || 0;
-    clothesRightcurrentTranslateX -= clothesRighttranslateStep;
-    if (clothesRightcurrentTranslateX < clothesRightmaxTranslateX) {
-        clothesRightcurrentTranslateX = clothesRightmaxTranslateX;
-    }
-    clothesList.style.transform = `translateX(${clothesRightcurrentTranslateX}px)`
-}
+// const clothesRighttranslateStep = 200; 
+
+// clothesRightBtn.onclick = () => {
+//     let clothesRightcurrentTranslateX = parseInt(clothesList.style.transform.replace('translateX(', '').replace('px)', '')) || 0;
+//     clothesRightcurrentTranslateX -= clothesRighttranslateStep;
+//     if (clothesRightcurrentTranslateX < clothesRightmaxTranslateX) {
+//         clothesRightcurrentTranslateX = clothesRightmaxTranslateX;
+//     }
+//     clothesList.style.transform = `translateX(${clothesRightcurrentTranslateX}px)`
+// }
 
 //necklace left and right buttons
 
-const necklaceLeftBtn = document.getElementById('necklace-left');
-const necklaceLeftmaxTranslateX = 0; // Adjust the maximum translation as needed
-const necklaceLefttranslateStep = -200; // Adjust the step size as needed
+// const necklaceLeftBtn = document.getElementById('necklace-left');
+// const necklaceLeftmaxTranslateX = 0;
+// const necklaceLefttranslateStep = -200; 
 
-necklaceLeftBtn.onclick = () => {
-    let necklaceLeftcurrentTranslateX = parseInt(necklaceList.style.transform.replace('translateX(', '').replace('px)', '')) || 0;
-    necklaceLeftcurrentTranslateX -= necklaceLefttranslateStep;
-    if (necklaceLeftcurrentTranslateX > necklaceLeftmaxTranslateX) {
-        necklaceLeftcurrentTranslateX = necklaceLeftmaxTranslateX;
-    }
-    necklaceList.style.transform = `translateX(${necklaceLeftcurrentTranslateX}px)`;
-}
+// necklaceLeftBtn.onclick = () => {
+//     let necklaceLeftcurrentTranslateX = parseInt(necklaceList.style.transform.replace('translateX(', '').replace('px)', '')) || 0;
+//     necklaceLeftcurrentTranslateX -= necklaceLefttranslateStep;
+//     if (necklaceLeftcurrentTranslateX > necklaceLeftmaxTranslateX) {
+//         necklaceLeftcurrentTranslateX = necklaceLeftmaxTranslateX;
+//     }
+//     necklaceList.style.transform = `translateX(${necklaceLeftcurrentTranslateX}px)`;
+// }
 
-const necklaceRightBtn = document.getElementById('necklace-right');
-// const necklaceRightmaxTranslateX = -1300;
-const necklaceRighttranslateStep = 200; // Adjust the step size as needed
+// const necklaceRightBtn = document.getElementById('necklace-right');
 
-necklaceRightBtn.onclick = () => {
-    let necklaceRightcurrentTranslateX = parseInt(necklaceList.style.transform.replace('translateX(', '').replace('px)', '')) || 0;
-    necklaceRightcurrentTranslateX -= necklaceRighttranslateStep;
-    if (necklaceRightcurrentTranslateX < necklaceRightmaxTranslateX) {
-        necklaceRightcurrentTranslateX = necklaceRightmaxTranslateX;
-    }
-    necklaceList.style.transform = `translateX(${necklaceRightcurrentTranslateX}px)`;
-}
+// const necklaceRighttranslateStep = 200; 
+
+// necklaceRightBtn.onclick = () => {
+//     let necklaceRightcurrentTranslateX = parseInt(necklaceList.style.transform.replace('translateX(', '').replace('px)', '')) || 0;
+//     necklaceRightcurrentTranslateX -= necklaceRighttranslateStep;
+//     if (necklaceRightcurrentTranslateX < necklaceRightmaxTranslateX) {
+//         necklaceRightcurrentTranslateX = necklaceRightmaxTranslateX;
+//     }
+//     necklaceList.style.transform = `translateX(${necklaceRightcurrentTranslateX}px)`;
+// }
 
 //bg left and right buttons
 
-const bgLeftBtn = document.getElementById('bg-left');
-const bgLeftmaxTranslateX = 0; // Adjust the maximum translation as needed
-const bgLefttranslateStep = -200; // Adjust the step size as needed
+// const bgLeftBtn = document.getElementById('bg-left');
+// const bgLeftmaxTranslateX = 0; 
+// const bgLefttranslateStep = -200; 
 
-bgLeftBtn.onclick = () => {
-    let bgLeftcurrentTranslateX = parseInt(bgList.style.transform.replace('translateX(', '').replace('px)', '')) || 0;
-    bgLeftcurrentTranslateX -= bgLefttranslateStep;
-    if (bgLeftcurrentTranslateX > bgLeftmaxTranslateX) {
-        bgLeftcurrentTranslateX = bgLeftmaxTranslateX;
-    }
-    bgList.style.transform = `translateX(${bgLeftcurrentTranslateX}px)`;
-}
+// bgLeftBtn.onclick = () => {
+//     let bgLeftcurrentTranslateX = parseInt(bgList.style.transform.replace('translateX(', '').replace('px)', '')) || 0;
+//     bgLeftcurrentTranslateX -= bgLefttranslateStep;
+//     if (bgLeftcurrentTranslateX > bgLeftmaxTranslateX) {
+//         bgLeftcurrentTranslateX = bgLeftmaxTranslateX;
+//     }
+//     bgList.style.transform = `translateX(${bgLeftcurrentTranslateX}px)`;
+// }
 
-const bgRightBtn = document.getElementById('bg-right');
-// const bgRightmaxTranslateX = -1300;
-const bgRighttranslateStep = 200; // Adjust the step size as needed
+// const bgRightBtn = document.getElementById('bg-right');
 
-bgRightBtn.onclick = () => {
-    let bgRightcurrentTranslateX = parseInt(bgList.style.transform.replace('translateX(', '').replace('px)', '')) || 0;
-    bgRightcurrentTranslateX -= bgRighttranslateStep;
-    if (bgRightcurrentTranslateX < bgRightmaxTranslateX) {
-        bgRightcurrentTranslateX = bgRightmaxTranslateX;
-    }
-    bgList.style.transform = `translateX(${bgRightcurrentTranslateX}px)`;
-}
+// const bgRighttranslateStep = 200;
 
+// bgRightBtn.onclick = () => {
+//     let bgRightcurrentTranslateX = parseInt(bgList.style.transform.replace('translateX(', '').replace('px)', '')) || 0;
+//     bgRightcurrentTranslateX -= bgRighttranslateStep;
+//     if (bgRightcurrentTranslateX < bgRightmaxTranslateX) {
+//         bgRightcurrentTranslateX = bgRightmaxTranslateX;
+//     }
+//     bgList.style.transform = `translateX(${bgRightcurrentTranslateX}px)`;
+// }
 
+document.addEventListener('DOMContentLoaded', function() {
+    const buttons = document.querySelectorAll('.category-buttons button');
+    const selectors = document.querySelectorAll('.selector');
+
+    buttons.forEach(button => {
+        button.addEventListener('click', function() {
+            selectors.forEach(selector => selector.classList.remove('active'));
+            document.getElementById(button.dataset.category).classList.add('active');
+        });
+    });
+});
 
